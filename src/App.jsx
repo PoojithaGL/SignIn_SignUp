@@ -5,6 +5,7 @@ import SignUp from "./components/SignUp";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 
+
 let router = createBrowserRouter([
   {
     path: "/",
