@@ -1,0 +1,40 @@
+.SignInContainer {
+    height: 400px;
+    width: 400px;
+    background-color: aliceblue;
+    padding-top: 30px;
+    margin-top: 30px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: medium;
+}
+
+.Inputs {
+    margin: 40px;
+}
+
+.Inputs input {
+   
+    margin-bottom: 30px; 
+    width: 250px;
+    padding:15px;
+    border-radius:30px
+}
+
+.SignUpButton{
+    background-color: rgb(221, 221, 214);
+    border-radius: 30px;
+    margin-top: 20px;
+    width:60px;
+   height:20px;
+    display: inline-block;  
+    text-align: center;
+    padding: 15px; 
+    color: black;
+}
+.SigninButton{
+    background-color: rgb(221, 221, 214);
+    border-radius: 30px;
+ margin-bottom: 20px;
+   
+}
