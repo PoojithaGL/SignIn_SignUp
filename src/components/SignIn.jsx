@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import "./SignIn.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import  supabase  from "./createClient"; 
 const SignIn = () => {
 
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
   const [message, setMessage] = useState("");
+
+
+ 
+
+  const navigate = useNavigate()
 
   const handlePassword = (event) => {
     setPassword(event.target.value);
@@ -19,8 +25,22 @@ const SignIn = () => {
 
 
   const handleSignIn = async () => {
+         
+
     if (!password || !email) {
       setMessage("Please fill in both email and password!");
+      return;
+    }
+    
+    const emailPattern =  /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailPattern.test(email)) {
+      setEmailError(" include numbers, lowercase.");
+      return;
+    }
+    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%])[a-zA-Z0-9@#$%]{6,}$/;
+
+    if (!passwordPattern.test(password)) {
+      setPasswordError("Password must be at least 6 characters, include uppercase, lowercase, a number, and a special character.");
       return;
     }
 
@@ -38,12 +58,15 @@ const SignIn = () => {
       } else {
         console.log("Signed in successfully:", data);
         setMessage("Sign in successful!");
+        navigate('/Welcome')
       }
     } catch (error) {
       console.error("Exception:", error.message);
       setMessage("An unexpected error occurred");
     }
   };
+
+ 
 
   return (
     <div>
@@ -56,21 +79,23 @@ const SignIn = () => {
             onChange={handleEmail}
             value={email}
           />
+        
           <input
-            type="text"
+            type="password"
             placeholder="Password"
             onChange={handlePassword}
             value={password}
-          />
-          <button className="SigninButton" onClick={handleSignIn}>
+          />  {emailError}
+          {passwordError}
+          <div>{message}</div>
+          <button className="SigninButton" onClick={handleSignIn} >
             SignIn
           </button>
           <br />
-          <div>{message}</div>
-          Do not have an account ? SignUp
+          Do not have an account ?
           <br />
-          <NavLink to="/SignUp" className="SignUpButton">
-            SignUp
+          <NavLink to="/SignUp" className="SignUpButton"  >
+            SignUp 
           </NavLink>
         </div>
       </div>

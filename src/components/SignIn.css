@@ -1,5 +1,5 @@
 .SignInContainer {
-    height: 400px;
+    height: 450px;
     width: 400px;
     background-color: aliceblue;
     padding-top: 30px;
@@ -21,7 +21,7 @@
     border-radius:30px
 }
 
-.SignUpButton{
+/* .SignUpButton{
     background-color: rgb(221, 221, 214);
     border-radius: 30px;
     margin-top: 20px;
@@ -31,10 +31,11 @@
     text-align: center;
     padding: 15px; 
     color: black;
-}
+} */
 .SigninButton{
     background-color: rgb(221, 221, 214);
     border-radius: 30px;
+    margin-top: 10px;
  margin-bottom: 20px;
    
 }
