@@ -37,10 +37,10 @@ const SignIn = () => {
       setEmailError(" include numbers, lowercase.");
       return;
     }
-    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%])[a-zA-Z0-9@#$%]{6,}$/;
+    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%_])[A-Za-z0-9@#$%]{4,}$/;
 
     if (!passwordPattern.test(password)) {
-      setPasswordError("Password must be at least 6 characters, include uppercase, lowercase, a number, and a special character.");
+      setPasswordError("Password must be at least 4 characters, include uppercase, lowercase, a number, and a special character.");
       return;
     }
 
