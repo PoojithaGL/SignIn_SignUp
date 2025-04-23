@@ -69,37 +69,43 @@ const SignIn = () => {
  
 
   return (
-    <div>
-      <div className="SignInContainer">
-        SignIn
+    
+    <div >
+      <div className=" flex-col justify-center item-center h-100 w-90 bg-gray-100 p-3 rounded-xl">
+        <h1>SignIn</h1>
         <div className="Inputs">
-          <input
+          <input className='p-3  m-4 rounded-lg bg-gray-200 black w-60'
             type="text"
             placeholder="Email"
             onChange={handleEmail}
             value={email}
           />
         
-          <input
+          <input className='p-3 mb-4 rounded-lg bg-gray-200 w-60 text-black'
             type="password"
             placeholder="Password"
             onChange={handlePassword}
             value={password}
-          />  {emailError}
+          /> 
+          <div className="text-red-500">
+          {message}
+           {emailError}
           {passwordError}
-          <div>{message}</div>
-          <button className="SigninButton" onClick={handleSignIn} >
-            SignIn
-          </button>
+          </div>
+          
+          <div >
+          <input type="button" className="bg-blue-500 text-white hover:text-black hover:bg-blue-100 w-60 h-10 rounded-lg mt-4" value="SignIn "  onClick={handleSignIn} />
+          </div>
           <br />
           Do not have an account ?
           <br />
-          <NavLink to="/SignUp" className="SignUpButton"  >
+          <NavLink to="/SignUp" className="SignUpButton "  >
             SignUp 
           </NavLink>
         </div>
       </div>
     </div>
+    
   );
 };
 

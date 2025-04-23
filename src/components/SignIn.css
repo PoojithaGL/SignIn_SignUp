@@ -1,4 +1,4 @@
-.SignInContainer {
+/* .SignInContainer {
     height: 470px;
     width: 400px;
     background-color: aliceblue;
@@ -7,19 +7,19 @@
     border-radius: 20px;
     font-weight: 700;
     font-size: medium;
-}
+} */
 
-.Inputs {
+/* .Inputs {
     margin: 40px;
-}
+} */
 
-.Inputs input {
+/* .Inputs input {
    
     margin-bottom: 30px; 
     width: 250px;
     padding:15px;
     border-radius:30px
-}
+} */
 
 /* .SignUpButton{
     background-color: rgb(221, 221, 214);
@@ -32,10 +32,10 @@
     padding: 15px; 
     color: black;
 } */
-.SigninButton{
+/* .SigninButton{
     background-color: rgb(221, 221, 214);
     border-radius: 30px;
     margin-top: 10px;
  margin-bottom: 20px;
    
-}
+} */

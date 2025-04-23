@@ -85,31 +85,36 @@ const handleSignUp = async () => {
   }
 };
   return (
-    <div>
-      <div>
-        <div className="SignUpContainer">
-          SignUp
+      <div className="min-h-screen w-full  flex items-center justify-center ">
+      <div className=" flex-col justify-center item-center h-110 w-90 bg-gray-100 p-3 rounded-xl">
+        <div>
+         <h1> SignUp</h1>
           <div className="Input">
-            <input
+            <input className='p-3  m-4 rounded-lg bg-gray-200 black w-60'
               type="text"
               placeholder="Name"
               onChange={handleUser}
               value={user}
             />
-            <input
+            <input  className='p-3 mb-4 rounded-lg bg-neutral-200 w-60 text-black'
               type="text"
+              autoComplete="off"
               placeholder="Email"
               onChange={handleEmail}
               value={email}
             /> 
-            <input
+            <input  className='p-3 mb-4 rounded-lg bg-gray-200 w-60 text-black'
               type="password"
               placeholder="Password"
               onChange={handlePassword}
               value={password}
-            /> {usernameError}{emailError}{passwordError}
-            <br /> 
-            <button className="SignupButton" onClick={handleSignUp}>SignUp</button>
+            /> <div className="text-red-500">
+              {usernameError}{emailError}{passwordError}
+              </div>
+              <div >
+          <input type="button" className="bg-blue-500 text-white hover:text-black hover:bg-blue-100 w-60 h-10 rounded-lg mt-4" value="SignUp "  onClick={handleSignUp} />
+          </div>
+            
             <br />
             Already have an account ?
             <br />
@@ -119,7 +124,7 @@ const handleSignUp = async () => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
   );
 };
 
